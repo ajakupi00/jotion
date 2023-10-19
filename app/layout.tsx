@@ -1,3 +1,4 @@
+import { Toaster } from 'sonner'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -34,15 +35,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ConvexClientProvider>
-        <ThemeProvider
-        attribute='class'
-        defaultTheme='system'
-        enableSystem
-        disableTransitionOnChange
-        storageKey='jotion-theme'>
-        {children}
-
-        </ThemeProvider>
+          <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+          storageKey='jotion-theme'>
+            <Toaster position='bottom-center' />
+            {children}
+          </ThemeProvider>
         </ConvexClientProvider>
         </body>
     </html>
